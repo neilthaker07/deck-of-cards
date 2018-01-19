@@ -1,0 +1,16 @@
+package first;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
+import deckOfCards.MainApp;
+
+public class MainAppTest {
+
+	@Test
+	public void testSayHello() {
+		MainApp app = new MainApp();
+	}
+
+}

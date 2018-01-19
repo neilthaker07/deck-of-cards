@@ -1,0 +1,11 @@
+package first;
+
+public class MainAppTest {
+	
+	@Test
+	   public void testSayHello() {
+	      MainApp app = new MainApp();
+	      assertNotNull("Success", app.sayHello());
+	   }
+
+}

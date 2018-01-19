@@ -1,0 +1,61 @@
+package edu.resource;
+
+import edu.model.Card;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		MainApp app = new MainApp();
+		app.createDeck();
+		app.getDeck();
+		app.shuffle();
+		app.getDeck();
+		app.dealOneCard();
+	}
+
+	private String suits[] = { "hearts", "diamonds", "clubs", "spades" };
+	private String values[] = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
+	
+	private int deckSize = 52;
+	private Card deck[] = new Card[deckSize];
+	
+	private int returnedCards = 0;
+
+	public void createDeck() {
+		for (int i = 0; i < deck.length; i++) {
+			deck[i] = new Card(suits[i / 13], values[i % 13]);
+		}
+		System.out.println("Deck created");
+	}
+
+	public void getDeck() {
+		for (int i = 0; i < (deck.length - returnedCards); i++) {
+			System.out.println(deck[i].getSuit() + " " + deck[i].getValue());
+		}
+	}
+
+	public void shuffle() {
+		for (int i = 0; i < (deck.length - returnedCards); i++) {
+			int j = (int) (Math.random() * 52);
+			// swap cards
+			Card temp = deck[i];
+			deck[i] = deck[j];
+			deck[j] = temp;
+		}
+
+		System.out.println("shuffle completed");
+	}
+
+	public Card dealOneCard() {
+		System.out.println("Deal One Card : ");
+		if (returnedCards <= 52) {
+			int a = (int) (Math.random() * 52);
+			returnedCards++;
+			deck[a] = null;
+			System.out.println(deck[a].getSuit() + " " + deck[a].getValue());
+			return deck[a];
+		}
+		System.out.println("no card is dealt");
+		return null;
+	}
+}

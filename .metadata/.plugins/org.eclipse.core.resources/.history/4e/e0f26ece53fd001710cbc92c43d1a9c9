@@ -1,0 +1,32 @@
+package first;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		MainApp app = new MainApp();
+		System.out.println(app.sayHello());
+		
+		app.createDeck();
+	}
+
+	public String sayHello() {
+		return "Hello Gradle 555552";
+	}
+	
+	public void createDeck()
+	{
+		Card c1 = new Card("hearts","Ace");
+		Card c2 = new Card("hearts","2");
+		Card c3 = new Card("hearts","3");
+		
+		
+		
+		
+	}
+	
+	
+	public void shuffle()
+	{
+		
+	}
+}
